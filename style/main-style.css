@@ -47,3 +47,8 @@ td {
 #clasificacion {
     display: none;
 }
+
+tr:hover{
+    cursor: pointer;
+    background-color: #454545 !important;
+}
