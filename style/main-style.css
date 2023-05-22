@@ -27,10 +27,6 @@ p {
     margin: 0 !important;
 }
 
-#hero {
-    margin-top: 180px;
-}
-
 #hero-img {
     filter: invert(80%);
 }
@@ -48,7 +44,7 @@ td {
     display: none;
 }
 
-.indice:hover{
+.indice:hover {
     cursor: pointer;
     background-color: #454545 !important;
 }
