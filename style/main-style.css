@@ -3,7 +3,7 @@ body {
     color: #dcdcdc !important;
 }
 
-header{
+header {
     background-color: #1E1E1E !important;
 }
 
@@ -39,6 +39,11 @@ p {
     color: #ddb900 !important;
 }
 
-th, td{
+th,
+td {
     color: #dcdcdc !important;
+}
+
+#clasificacion {
+    display: none;
 }
