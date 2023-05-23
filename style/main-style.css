@@ -48,3 +48,9 @@ td {
     cursor: pointer;
     background-color: #454545 !important;
 }
+
+@media (max-width: 1400px) {
+    #cajaMenu{
+        display: none !important;
+    }
+}
