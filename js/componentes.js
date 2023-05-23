@@ -11,7 +11,7 @@ function componenteLi(enlaceAlQueRedirige, srcImagen, texto) {
     nodoLi.className = 'nav nav-pills';
 
     ancla.href = enlaceAlQueRedirige;
-    ancla.className = 'nav-link fs-5 text-light d-flex flex-column justify-content-center align-items-center';
+    ancla.className = 'nav-link fs-5 text-light d-flex flex-column justify-content-center align-items-center blur-out';
 
     imagen.src = srcImagen;
     imagen.className = 'img-fluid';

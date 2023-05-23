@@ -49,8 +49,23 @@ td {
     background-color: #454545 !important;
 }
 
+.blur-out:focus {
+    animation: blur-out 0.4s linear both
+}
+
+@keyframes blur-out {
+    0% {
+        filter: blur(.01px);
+    }
+
+    100% {
+        filter: blur(12px);
+        opacity: 0
+    }
+}
+
 @media (max-width: 1400px) {
-    #cajaMenu{
+    #cajaMenu {
         display: none !important;
     }
 }
