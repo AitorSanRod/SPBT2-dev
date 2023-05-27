@@ -53,6 +53,27 @@ td {
     animation: blur-out 0.4s linear both
 }
 
+#menuResponsive {
+    display: none;
+}
+
+#botonMenuResponsive {
+    width: auto;
+    height: 50%;
+    display: flex;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+#botonMenuResponsive:hover {
+    cursor: pointer;
+}
+
+#menuLateral{
+    background-color: #1E1E1E;
+    color: #dcdcdc !important;
+}
+
 @keyframes blur-out {
     0% {
         filter: blur(.01px);
