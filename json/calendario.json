@@ -19,7 +19,7 @@
                 "estado": "Descanso"
             }
         ],
-        "fecha":"05/02/2023"
+        "fecha":"CERRADO"
     },
     {
         "jornada":"2",
@@ -41,7 +41,7 @@
                 "estado": "Descanso"
             }
         ],
-        "fecha":"05/03/2023"
+        "fecha":"CERRADO"
     },
     {
         "jornada":"3",
@@ -56,14 +56,14 @@
             },
             {
                 "parejas":"Dos cojos muy mancos vs. PadelScript",
-                "estado": "Pendiente"
+                "estado": "Jugado"
             },
             {
                 "parejas":"Los Hermanos Brothers",
                 "estado": "Descanso"
             }
         ],
-        "fecha":"26/03/2023"
+        "fecha":"CERRADO"
     },
     {
         "jornada":"4",

@@ -60,7 +60,7 @@ function componenteLiMovil(enlaceAlQueRedirige, srcImagen, texto) {
 function componenteSpinner(idDelComponente) {
     const spinner = document.createElement('div');
 
-    spinner.className = 'spinner-border'
+    spinner.className = 'spinner-border my-5'
     spinner.style.width = '3rem';
     spinner.style.height = '3rem';
     spinner.role = 'status';
@@ -72,15 +72,15 @@ function componenteSpinner(idDelComponente) {
 function componenteMenuLateral() {
     const menuLateral = document.createElement('div');
     const divCabecera = document.createElement('div');
-    const tituloMenu = document.createElement('h5');
+    const tituloMenu = document.createElement('h2');
     const botonCierre = '<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>';
     const divContenido = document.createElement('div');
     const textoContenido = document.createElement('ul');
-    const portadaMovil = componenteLiMovil('#', 'img/hogar.png', 'Portada');
-    const fotosMovil = componenteLiMovil('#', 'img/galeria.png', 'Imagenes');
-    const rankingMovil = componenteLiMovil('#', 'img/trofeo.png', 'Ranking');
-    const calendarioMovil = componenteLiMovil('#', 'img/calendario-reloj.png', 'Calendario');
-    const parejasMovil = componenteLiMovil('#', 'img/bola.png', 'Parejas');
+    const portadaMovil = componenteLiMovil('../index.html', 'https://res.cloudinary.com/dodq6s1fh/image/upload/v1686249249/SPBT2/hogar_skqqnv.png', 'Portada');
+    const fotosMovil = componenteLiMovil('#', 'https://res.cloudinary.com/dodq6s1fh/image/upload/v1686249249/SPBT2/galeria_iubt6g.png', 'Imagenes');
+    const rankingMovil = componenteLiMovil('pages/clasificacion.html', 'https://res.cloudinary.com/dodq6s1fh/image/upload/v1686249249/SPBT2/trofeo_ui4ond.png', 'Ranking');
+    const calendarioMovil = componenteLiMovil('#', 'https://res.cloudinary.com/dodq6s1fh/image/upload/v1686249249/SPBT2/calendario-reloj_uocicx.png', 'Calendario');
+    const parejasMovil = componenteLiMovil('#', 'https://res.cloudinary.com/dodq6s1fh/image/upload/v1686249249/SPBT2/bola_zh2new.png', 'Parejas');
     const datosMenuMovil = [portadaMovil, fotosMovil, rankingMovil, calendarioMovil, parejasMovil];
 
     menuLateral.className = 'offcanvas offcanvas-start';
