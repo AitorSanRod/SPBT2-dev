@@ -35,16 +35,17 @@ function componenteLiMovil(enlaceAlQueRedirige, srcImagen, texto) {
     const imagen = document.createElement('img');
     const parrafo = document.createElement('p');
 
-    nodoLi.className = 'nav nav-pills';
+    nodoLi.className = 'nav nav-pills my-3';
 
     ancla.href = enlaceAlQueRedirige;
-    ancla.className = 'nav-link fs-5 text-light d-flex justify-content-center align-items-center blur-out';
+    ancla.className = 'nav-link fs-5 text-light d-flex align-items-center blur-out';
+    ancla.style.width = '95%';
 
     imagen.src = srcImagen;
     imagen.className = 'img-fluid';
     imagen.style.width = '60px';
 
-    parrafo.className = 'fw-medium';
+    parrafo.className = 'fw-medium ms-5';
     parrafo.innerText = texto;
     parrafo.style.width = '100px';
     parrafo.style.textAlign = 'center';
@@ -75,6 +76,12 @@ function componenteMenuLateral() {
     const botonCierre = '<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>';
     const divContenido = document.createElement('div');
     const textoContenido = document.createElement('ul');
+    const portadaMovil = componenteLiMovil('#', 'img/hogar.png', 'Portada');
+    const fotosMovil = componenteLiMovil('#', 'img/galeria.png', 'Imagenes');
+    const rankingMovil = componenteLiMovil('#', 'img/trofeo.png', 'Ranking');
+    const calendarioMovil = componenteLiMovil('#', 'img/calendario-reloj.png', 'Calendario');
+    const parejasMovil = componenteLiMovil('#', 'img/bola.png', 'Parejas');
+    const datosMenuMovil = [portadaMovil, fotosMovil, rankingMovil, calendarioMovil, parejasMovil];
 
     menuLateral.className = 'offcanvas offcanvas-start';
     menuLateral.tabIndex = '-1';
@@ -93,6 +100,9 @@ function componenteMenuLateral() {
     divContenido.className = 'offcanvas-body';
 
     textoContenido.id = 'contenidoMenuMovil';
+    datosMenuMovil.forEach(item => {
+        textoContenido.appendChild(item);
+    });
 
     divContenido.appendChild(textoContenido);
     menuLateral.appendChild(divContenido);
