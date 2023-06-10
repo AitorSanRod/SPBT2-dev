@@ -1,0 +1,1 @@
+Cambiar el menu del index para que las rutas del index y el resto del paginas coincidan

@@ -69,17 +69,17 @@ function componenteSpinner(idDelComponente) {
     return spinner;
 }
 
-function componenteMenuLateral() {
+function componenteMenuLateralIndex() {
     const menuLateral = document.createElement('div');
     const divCabecera = document.createElement('div');
     const tituloMenu = document.createElement('h2');
     const botonCierre = '<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>';
     const divContenido = document.createElement('div');
     const textoContenido = document.createElement('ul');
-    const portadaMovil = componenteLiMovil('../index.html', 'https://res.cloudinary.com/dodq6s1fh/image/upload/v1686249249/SPBT2/hogar_skqqnv.png', 'Portada');
+    const portadaMovil = componenteLiMovil('#', 'https://res.cloudinary.com/dodq6s1fh/image/upload/v1686249249/SPBT2/hogar_skqqnv.png', 'Portada');
     const fotosMovil = componenteLiMovil('#', 'https://res.cloudinary.com/dodq6s1fh/image/upload/v1686249249/SPBT2/galeria_iubt6g.png', 'Imagenes');
     const rankingMovil = componenteLiMovil('pages/clasificacion.html', 'https://res.cloudinary.com/dodq6s1fh/image/upload/v1686249249/SPBT2/trofeo_ui4ond.png', 'Ranking');
-    const calendarioMovil = componenteLiMovil('#', 'https://res.cloudinary.com/dodq6s1fh/image/upload/v1686249249/SPBT2/calendario-reloj_uocicx.png', 'Calendario');
+    const calendarioMovil = componenteLiMovil('pages/calendario.html', 'https://res.cloudinary.com/dodq6s1fh/image/upload/v1686249249/SPBT2/calendario-reloj_uocicx.png', 'Calendario');
     const parejasMovil = componenteLiMovil('#', 'https://res.cloudinary.com/dodq6s1fh/image/upload/v1686249249/SPBT2/bola_zh2new.png', 'Parejas');
     const datosMenuMovil = [portadaMovil, fotosMovil, rankingMovil, calendarioMovil, parejasMovil];
 
@@ -109,3 +109,46 @@ function componenteMenuLateral() {
 
     return menuLateral;
 }
+
+function componenteMenuLateral() {
+    const menuLateral = document.createElement('div');
+    const divCabecera = document.createElement('div');
+    const tituloMenu = document.createElement('h2');
+    const botonCierre = '<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>';
+    const divContenido = document.createElement('div');
+    const textoContenido = document.createElement('ul');
+    const portadaMovil = componenteLiMovil('../index.html', 'https://res.cloudinary.com/dodq6s1fh/image/upload/v1686249249/SPBT2/hogar_skqqnv.png', 'Portada');
+    const fotosMovil = componenteLiMovil('#', 'https://res.cloudinary.com/dodq6s1fh/image/upload/v1686249249/SPBT2/galeria_iubt6g.png', 'Imagenes');
+    const rankingMovil = componenteLiMovil('pages/clasificacion.html', 'https://res.cloudinary.com/dodq6s1fh/image/upload/v1686249249/SPBT2/trofeo_ui4ond.png', 'Ranking');
+    const calendarioMovil = componenteLiMovil('pages/calendario.html', 'https://res.cloudinary.com/dodq6s1fh/image/upload/v1686249249/SPBT2/calendario-reloj_uocicx.png', 'Calendario');
+    const parejasMovil = componenteLiMovil('#', 'https://res.cloudinary.com/dodq6s1fh/image/upload/v1686249249/SPBT2/bola_zh2new.png', 'Parejas');
+    const datosMenuMovil = [portadaMovil, fotosMovil, rankingMovil, calendarioMovil, parejasMovil];
+
+    menuLateral.className = 'offcanvas offcanvas-start';
+    menuLateral.tabIndex = '-1';
+    menuLateral.id = 'menuLateral';
+    menuLateral.setAttribute('aria-labelledby', 'offcanvasExampleLabel');
+
+    divCabecera.className = 'offcanvas-header';
+
+    tituloMenu.className = 'offcanvas-title';
+    tituloMenu.innerHTML = 'Super Padel Bros Tour <span class="signature">2</span>';
+
+    divCabecera.appendChild(tituloMenu);
+    divCabecera.innerHTML += botonCierre;
+    menuLateral.appendChild(divCabecera);
+
+    divContenido.className = 'offcanvas-body';
+
+    textoContenido.id = 'contenidoMenuMovil';
+    datosMenuMovil.forEach(item => {
+        textoContenido.appendChild(item);
+    });
+
+    divContenido.appendChild(textoContenido);
+    menuLateral.appendChild(divContenido);
+
+    return menuLateral;
+}
+
+
