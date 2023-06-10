@@ -13,6 +13,8 @@ const mainHero = document.querySelector('#hero');
 
 function montarHero() {
     return new Promise(resolve => {
+        const urlMenuResponsive = 'https://res.cloudinary.com/dodq6s1fh/image/upload/v1686249249/SPBT2/menu-puntos-vertical_gemcny.png';
+
         mainHero.innerHTML = `<div class="text-center border-bottom my-3" id="cabeceraPC">
                 <div class="row">
                     <div class="col col-5" id="titulo">
@@ -20,7 +22,7 @@ function montarHero() {
                         <p class="lead mb-3" id="estado"></p>
                     </div>
                     <div class="col col-3 mb-3" id="menuResponsive" data-bs-toggle="offcanvas" href="#menuLateral" aria-controls="menuLateral">
-                        <img src="https://res.cloudinary.com/dodq6s1fh/image/upload/v1686249249/SPBT2/menu-puntos-vertical_gemcny.png" id="botonMenuResponsive">
+                        <img src="${urlMenuResponsive}" id="botonMenuResponsive">
                     </div>
                     <div class="col col-7 d-flex justify-content-center align-items-center" id="cajaMenu">
                         <header class="d-flex justify-content-center">
@@ -36,7 +38,7 @@ function montarHero() {
 
 async function montarPagina() {
     montarHero()
-        .then(end => {
+        .then(() => {
             const jornada = document.querySelector('#estado');
             const menuPC = document.querySelector('#menu');
             const menuResponsive = document.querySelector('#menuResponsive');
