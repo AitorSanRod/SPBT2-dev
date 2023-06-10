@@ -13,76 +13,76 @@ const mainHero = document.querySelector('#hero');
 const footer = document.querySelector('#footer');
 
 function montarHero() {
-    return new Promise(resolve => {
-        const urlMenuResponsive = 'https://res.cloudinary.com/dodq6s1fh/image/upload/v1686249249/SPBT2/menu-puntos-vertical_gemcny.png';
+  return new Promise(resolve => {
+    const urlMenuResponsive = 'https://res.cloudinary.com/dodq6s1fh/image/upload/v1686249249/SPBT2/menu-puntos-vertical_gemcny.png';
 
-        mainHero.innerHTML = `<div class="text-center border-bottom my-3" id="cabeceraPC">
-                <div class="row">
-                    <div class="col col-5" id="titulo">
-                        <h1 class="display-4 fw-bold">Super Padel Bros Tour <span class="signature">2</span></h1>
-                        <p class="lead mb-3" id="estado"></p>
-                    </div>
-                    <div class="col col-3 mb-3" id="menuResponsive" data-bs-toggle="offcanvas" href="#menuLateral" aria-controls="menuLateral">
-                        <img src="${urlMenuResponsive}" id="botonMenuResponsive">
-                    </div>
-                    <div class="col col-7 d-flex justify-content-center align-items-center" id="cajaMenu">
-                        <header class="d-flex justify-content-center">
-                            <ul class="nav nav-pills gap-3" id="menu"></ul>
-                        </header>
-                    </div>
-                </div>
-            </div>`;
+    mainHero.innerHTML = `<div class="text-center border-bottom my-3" id="cabeceraPC">
+        <div class="row">
+          <div class="col col-5" id="titulo">
+            <h1 class="display-4 fw-bold">Super Padel Bros Tour <span class="signature">2</span></h1>
+            <p class="lead mb-3" id="estado"></p>
+          </div>
+          <div class="col col-3 mb-3" id="menuResponsive" data-bs-toggle="offcanvas" href="#menuLateral" aria-controls="menuLateral">
+            <img src="${urlMenuResponsive}" id="botonMenuResponsive">
+          </div>
+          <div class="col col-7 d-flex justify-content-center align-items-center" id="cajaMenu">
+            <header class="d-flex justify-content-center">
+              <ul class="nav nav-pills gap-3" id="menu"></ul>
+            </header>
+          </div>
+        </div>
+      </div>`;
 
-        resolve();
-    });
+    resolve();
+  });
 }
 
 function montarFooter() {
-    footer.innerHTML = `<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-            <div class="col-md-4 d-flex align-items-center">
-                <p class="mb-3 mb-md-0">©2023 SPBT2</p>
-            </div>
-        </footer>`;
+  footer.innerHTML = `<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <div class="col-md-4 d-flex align-items-center">
+        <p class="mb-3 mb-md-0">©2023 SPBT2</p>
+      </div>
+    </footer>`;
 }
 
 async function montarPagina() {
-    montarHero()
-        .then(() => {
-            const jornada = document.querySelector('#estado');
-            const menuPC = document.querySelector('#menu');
-            const menuResponsive = document.querySelector('#menuResponsive');
+  montarHero()
+    .then(() => {
+      const jornada = document.querySelector('#estado');
+      const menuPC = document.querySelector('#menu');
+      const menuResponsive = document.querySelector('#menuResponsive');
 
-            menuLateral.appendChild(componenteMenuLateral());
-            jornada.innerText = 'Cuarta jornada';
-            spinner.appendChild(componenteSpinner('loadingClasificacion'));
+      menuLateral.appendChild(componenteMenuLateral());
+      jornada.innerText = 'Cuarta jornada';
+      spinner.appendChild(componenteSpinner('loadingClasificacion'));
 
-            datosMenuPC.forEach(indice => {
-                menuPC.appendChild(indice);
-            });
+      datosMenuPC.forEach(indice => {
+        menuPC.appendChild(indice);
+      });
 
-            mediaQuery(anchoPantalla);
-            anchoPantalla.addListener(mediaQuery);
+      mediaQuery(anchoPantalla);
+      anchoPantalla.addListener(mediaQuery);
 
-            function mediaQuery(anchoPantalla) {
-                const titulo = document.querySelector('#titulo');
-                const cabecera = document.querySelector('h1');
+      function mediaQuery(anchoPantalla) {
+        const titulo = document.querySelector('#titulo');
+        const cabecera = document.querySelector('h1');
 
-                if (anchoPantalla.matches) {
-                    titulo.className = 'col col-9';
-                    cabecera.innerHTML = 'SPBT <span class="signature">2</span>';
-                    menuResponsive.style.display = 'flex';
-                    menuResponsive.style.alignItems = 'center';
-                    menuResponsive.style.justifyContent = 'center';
+        if (anchoPantalla.matches) {
+          titulo.className = 'col col-9';
+          cabecera.innerHTML = 'SPBT <span class="signature">2</span>';
+          menuResponsive.style.display = 'flex';
+          menuResponsive.style.alignItems = 'center';
+          menuResponsive.style.justifyContent = 'center';
 
-                } else {
-                    titulo.className = 'col col-5';
-                    cabecera.innerHTML = 'Super Padel Bros Tour <span class="signature">2</span>';
-                    menuResponsive.style.display = 'none';
-                }
-            }
-        });
+        } else {
+          titulo.className = 'col col-5';
+          cabecera.innerHTML = 'Super Padel Bros Tour <span class="signature">2</span>';
+          menuResponsive.style.display = 'none';
+        }
+      }
+    });
 
-    montarFooter();
+  montarFooter();
 }
 
 montarPagina();

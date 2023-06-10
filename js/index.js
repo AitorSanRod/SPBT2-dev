@@ -21,6 +21,7 @@ datosMenuPC.forEach(indice => {
     menuPC.appendChild(indice);
 });
 
+//Esto esta mal, pero funciona (deprecated)
 mediaQuery(anchoPantalla);
 anchoPantalla.addListener(mediaQuery);
 
