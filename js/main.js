@@ -10,6 +10,7 @@ const datosMenuPC = [portada, fotos, ranking, calendario, parejas];
 const anchoPantalla = window.matchMedia("(max-width: 1400px)");
 const menuLateral = document.querySelector('#getMenu');
 const mainHero = document.querySelector('#hero');
+const footer = document.querySelector('#footer');
 
 function montarHero() {
     return new Promise(resolve => {
@@ -34,6 +35,14 @@ function montarHero() {
 
         resolve();
     });
+}
+
+function montarFooter() {
+    footer.innerHTML = `<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <div class="col-md-4 d-flex align-items-center">
+                <p class="mb-3 mb-md-0">©2023 SPBT2</p>
+            </div>
+        </footer>`;
 }
 
 async function montarPagina() {
@@ -72,6 +81,8 @@ async function montarPagina() {
                 }
             }
         });
+
+    montarFooter();
 }
 
 montarPagina();
