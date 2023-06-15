@@ -151,4 +151,53 @@ function componenteMenuLateral() {
     return menuLateral;
 }
 
+function componenteAcordeon(calendario) {
+    let acordeon;
+    let partidos;
+    let pareja;
+    let estado;
 
+    for (let i = 0; i < calendario.length; i++) {
+        acordeon = `<div class="accordion my-3" id="accordionExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    ${calendario[i].jornada}:${calendario[i].fecha}
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">` ;
+
+        partidos = calendario[i].partidos;
+
+        for (let j = 0; j < partidos.length; j++) {
+            pareja = document.createElement('p');
+            estado = document.createElement('p');
+
+            pareja.innerText = partidos[j].parejas;
+            estado.innerText = partidos[j].estado;
+
+            if (estado.innerText == 'Pendiente') {
+                estado.style = 'color: red;';
+            } else if (estado.innerText == 'Jugado') {
+                estado.style = 'color: green;';
+            } else {
+                estado.style = 'color: black;';
+            }
+
+            acordeon.innerHTML = acordeon + pareja;
+            acordeon.innerHTML = acordeon + estado;
+            acordeon.innerHTML = acordeon + `<hr>`;
+
+            console.log(acordeon)
+        }
+        acordeon += `</div>
+                </div>
+            </div>
+        </div>`
+    }
+
+    return acordeon;
+}

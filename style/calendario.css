@@ -1,0 +1,9 @@
+button{
+    background-color: #2d2d2d !important;
+    border: solid 1px #2d2d2d !important;
+    color: white !important;
+}
+
+.accordion-item{
+    border: transparent !important;
+}
