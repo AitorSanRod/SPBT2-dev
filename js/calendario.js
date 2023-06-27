@@ -5,6 +5,6 @@ fetch(URL)
     .then(response => response.json())
     .then(repos => {
         jsonCalendario = repos.map(docJson => docJson);
-        contenedorCalendario.innerHTML = componenteAcordeon(jsonCalendario);
+        contenedorCalendario.appendChild(componenteAcordeonCalendario('acordeonCalendario', jsonCalendario));
     })
     .catch(err => console.log(err));

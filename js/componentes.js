@@ -151,53 +151,59 @@ function componenteMenuLateral() {
     return menuLateral;
 }
 
-function componenteAcordeon(calendario) {
+function componenteAcordeonCalendario(id, calendario) {
     let acordeon;
-    let partidos;
-    let pareja;
-    let estado;
+    let itemAcordeon;
+    let encabezadoItem;
+    let itemBoton;
+    let contenidoDelAcordeon;
+    let cuerpoAcordeon;
+    let componente = document.createElement('div');
+
+    acordeon = document.createElement('div');
+    acordeon.className = 'accordion';
+    acordeon.id = id;
 
     for (let i = 0; i < calendario.length; i++) {
-        acordeon = `<div class="accordion my-3" id="accordionExample">
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                    ${calendario[i].jornada}:${calendario[i].fecha}
-                </button>
-            </h2>
-            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
-                data-bs-parent="#accordionExample">
-                <div class="accordion-body">` ;
+        itemAcordeon = document.createElement('div');
+        encabezadoItem = document.createElement('h2');
+        itemBoton = document.createElement('button');
+        contenidoDelAcordeon = document.createElement('div');
+        cuerpoAcordeon = document.createElement('div');
 
-        partidos = calendario[i].partidos;
+        // Encabezado y boton
+        itemAcordeon.className = 'accordion-item';
+        encabezadoItem.className = 'accordion-header';
+        itemBoton.className = 'accordion-button';
+        itemBoton.type = 'button';
+        itemBoton.setAttribute('data-bs-toggle', 'collapse');
+        itemBoton.setAttribute('data-bs-target', `#${calendario[i].jornada}`);
+        itemBoton.setAttribute('aria-expanded', 'true');
+        itemBoton.setAttribute('aria-controls', `collapse${i}`);
+        itemBoton.innerHTML = `Jornada: ${calendario[i].jornada}`;
 
-        for (let j = 0; j < partidos.length; j++) {
-            pareja = document.createElement('p');
-            estado = document.createElement('p');
+        // Contenido
+        contenidoDelAcordeon.id = `${calendario[i].jornada}`;
+        contenidoDelAcordeon.className = 'accordion-collapse collapse';
+        contenidoDelAcordeon.setAttribute('data-bs-parent', `#${id}`);
+        cuerpoAcordeon.className = 'accordion-body';
 
-            pareja.innerText = partidos[j].parejas;
-            estado.innerText = partidos[j].estado;
+        calendario[i].partidos.forEach(partido => {
+            cuerpoAcordeon.innerHTML += `
+                <h5 class='text-center'>${partido.parejas}</h5>
+                <h6 class='text-center'>${partido.estado}</h6>
+                <hr>
+            `;
+        });
 
-            if (estado.innerText == 'Pendiente') {
-                estado.style = 'color: red;';
-            } else if (estado.innerText == 'Jugado') {
-                estado.style = 'color: green;';
-            } else {
-                estado.style = 'color: black;';
-            }
-
-            acordeon.innerHTML = acordeon + pareja;
-            acordeon.innerHTML = acordeon + estado;
-            acordeon.innerHTML = acordeon + `<hr>`;
-
-            console.log(acordeon)
-        }
-        acordeon += `</div>
-                </div>
-            </div>
-        </div>`
+        contenidoDelAcordeon.appendChild(cuerpoAcordeon);
+        itemAcordeon.appendChild(encabezadoItem);
+        itemAcordeon.appendChild(itemBoton);
+        itemAcordeon.appendChild(contenidoDelAcordeon);
+        acordeon.appendChild(itemAcordeon);
     }
 
-    return acordeon;
+    componente.appendChild(acordeon);
+
+    return componente;
 }
