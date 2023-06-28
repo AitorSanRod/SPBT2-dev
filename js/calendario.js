@@ -48,8 +48,8 @@ function componenteAcordeonCalendario(id, calendario) {
     cuerpoAcordeon.className = 'accordion-body';
 
     for (let j = 0; j < calendario[i].partidos.length; j++) {
-      if (j < calendario[i].partidos.length - 1) {
-        if (calendario[i].partidos[j].estado === 'Jugado') {
+      if (j < calendario[i].partidos.length - 1) {// Reviso si es el último apunte para no poner la linea final
+        if (calendario[i].partidos[j].estado === 'Jugado') {// Depende del estado del partido doy un color u otro
           datosPartido = `
             <h5 class='text-center'>${calendario[i].partidos[j].parejas}</h5>
             <h6 class='text-center text-success'>${calendario[i].partidos[j].estado}</h6>
@@ -69,7 +69,7 @@ function componenteAcordeonCalendario(id, calendario) {
             <h5 class='text-center'>${calendario[i].partidos[j].parejas}</h5>
             <h6 class='text-center text-success'>${calendario[i].partidos[j].estado}</h6>
           `
-        } else if (calendario[i].partidos[j].estado === 'Descanso') {
+        } else if (calendario[i].partidos[j].estado === 'Descanso') {// Los Descanso siempre estan en el último lugar, por eso solo están aquí
           if (calendario[i].partidos[j].estado === 'Jugado') {
             datosPartido = `
               <h5 class='text-center'>${calendario[i].partidos[j].parejas}</h5>
