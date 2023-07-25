@@ -74,7 +74,7 @@
             },
             {
                 "parejas":"Edriadna's vs. Los agentes Mara",
-                "estado": "APLAZADO"
+                "estado": "Jugado"
             },
             {
                 "parejas":"Doctores y capibaras vs. Los Hermanos Brothers",
@@ -85,7 +85,7 @@
                 "estado": "Descanso"
             }
         ],
-        "fecha":"APLAZADA"
+        "fecha":"CERRADO"
     },
     {
         "jornada":"5",
@@ -96,7 +96,7 @@
             },
             {
                 "parejas":"Ahí va mi burst! vs. Dos cojos muy mancos",
-                "estado": "Pendiente"
+                "estado": "Jugado"
             },
             {
                 "parejas":"Los Hermanos Brothers vs. Edriadna's",
@@ -107,7 +107,7 @@
                 "estado": "Descanso"
             }
         ],
-        "fecha":"14/05/2023"
+        "fecha":"CERRADO"
     },
     {
         "jornada":"6",
@@ -140,7 +140,7 @@
             },
             {
                 "parejas":"Doctores y capibaras vs. PadelScript",
-                "estado": "Pendiente"
+                "estado": "Jugado"
             },
             {
                 "parejas":"Los Hermanos Brothers vs. Dos cojos muy mancos",
