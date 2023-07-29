@@ -9,10 +9,12 @@ header {
 
 a {
     background-color: #2d2d2d !important;
+    color: white !important;
 }
 
 a:hover {
     background-color: #ddb900 !important;
+    color: #2d2d2d !important;
 }
 
 a:hover img {
@@ -69,7 +71,7 @@ td {
     cursor: pointer;
 }
 
-#menuLateral{
+#menuLateral {
     background-color: #1E1E1E;
     color: #dcdcdc !important;
 }

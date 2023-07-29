@@ -99,8 +99,13 @@ function getJs() {
     app.get('/js/clasificacion', (req, res) => {
         res.sendFile(__dirname + '/src/js/clasificacion.js');
     });
+
     app.get('/js/admin', (req, res) => {
         res.sendFile(__dirname + '/src/js/admin.js');
+    });
+
+    app.get('/js/formulario', (req, res) => {
+        res.sendFile(__dirname + '/src/js/formulario.js');
     });
 }
 
